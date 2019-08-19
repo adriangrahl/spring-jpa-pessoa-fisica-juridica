@@ -1,0 +1,17 @@
+package br.com.senior.treinamento.model;
+
+public class Endereco implements BaseEntity {
+
+	@Override
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setId(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,9 @@
+package br.com.senior.treinamento.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import br.com.senior.treinamento.model.BaseEntity;
+
+public interface PessoaJuridicaRepository extends JpaRepository<PessoaJuridica, Long>, BaseEntity {
+
+}

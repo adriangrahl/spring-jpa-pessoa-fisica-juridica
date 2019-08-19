@@ -1,0 +1,6 @@
+package br.com.senior.treinamento.resource;
+
+public class PessoaJuridicaResource
+		extends CrudResource<PessoaJuridica, PessoaJuridicaRepository, PessoaJuridicaService> {
+
+}

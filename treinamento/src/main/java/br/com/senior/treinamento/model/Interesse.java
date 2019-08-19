@@ -1,0 +1,8 @@
+package br.com.senior.treinamento.model;
+
+public enum Interesse {
+	MUSICA,
+	FUTEBOL,
+	PROGRAMACAO,
+	FILME
+}

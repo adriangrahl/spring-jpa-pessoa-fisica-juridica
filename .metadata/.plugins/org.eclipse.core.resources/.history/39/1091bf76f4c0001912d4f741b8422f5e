@@ -1,0 +1,68 @@
+package br.com.senior.treinamento.resource;
+
+import javax.validation.Valid;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.senior.treinamento.model.BaseEntity;
+import br.com.senior.treinamento.repository.QueryDecoder;
+import br.com.senior.treinamento.service.CrudService;
+
+@RestController
+@CrossOrigin
+public abstract class CrudResource<M extends BaseEntity, R extends JpaRepository<M, Long> & JpaSpecificationExecutor<M>, S extends CrudService<M, R>> {
+	
+	protected S service;
+
+	public CrudResource(S service) {
+		this.service = service;
+	}
+	
+	@GetMapping
+	public Page<M> list(
+			@RequestParam(value = "filter", required = false)                              String  filter,
+			@RequestParam(value = "page",   required = false, defaultValue = "0")          Integer page, 
+			@RequestParam(value = "size",   required = false, defaultValue = "0X7fffffff") Integer size
+	) {		
+		Pageable pageable = PageRequest.of(page, size, Sort.by(this.service.getDefaultSort()));
+		
+		if (filter == null)
+			return this.service.list(pageable);
+		else
+			return this.service.filter(new QueryDecoder<>(filter), pageable);
+	}
+	
+	@GetMapping("/{id}")
+	public M read(@PathVariable Long id) {
+		return this.service.read(id);
+	}
+	
+	@PostMapping
+	protected M create(@RequestBody @Valid M p) throws Exception {
+		return this.service.create(p);
+	}
+	
+	@PutMapping("/{id}")
+	public M update(@RequestBody @Valid M p) throws Exception {
+		return this.service.update(p);
+	}
+	
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable Long id) throws Exception {
+		this.service.delete(id);
+	}
+}

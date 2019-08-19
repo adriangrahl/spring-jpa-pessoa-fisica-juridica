@@ -1,0 +1,177 @@
+{
+	"id": "417eeca9-983c-4a04-8706-de024c6f797d",
+	"name": "treinamento jpa generics spring",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"484ef54f-53d3-4d83-a12e-f66f5b25d6dc",
+		"c373eeb4-88c3-4cb1-aa28-6a527eae28f2",
+		"6d2cf19b-1d81-49eb-ab99-daa47f8f641c",
+		"8964e205-4b27-49d9-98e3-07be59abb64e",
+		"5c622b83-f500-413b-85da-1179ff288a01",
+		"836017aa-98c0-44ea-a24a-1c70e78862bb",
+		"16b69b93-f266-47c3-92a0-b2d620a586f5",
+		"a95af960-5ffe-4664-aeac-885c9ddb8c39"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "16b69b93-f266-47c3-92a0-b2d620a586f5",
+			"name": "post pessoa fisica",
+			"url": "http://localhost:8080/pessoa_fisica",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n    \"id\": 1,\n    \"nome\": \"Adrian Grahl Pereira\",\n    \"cpf\": \"07315831916\",\n    \"tipo\": \"PESSOA_FISICA\",\n    \"interesses\": [\n        \"PROGRAMACAO\",\n        \"FILME\"\n    ],\n    \"endereco\": {\n        \"id\": 1,\n        \"pessoa\": null,\n        \"cep\": \"89209-073\",\n        \"logradouro\": \"Tereza Farias Vieira\",\n        \"numero\": \"51\",\n        \"bairro\": \"Itaum\",\n        \"cidade\": \"Joinville\",\n        \"estado\": \"SC\",\n        \"pais\": \"Brasil\"\n    },\n    \"contatos\": [\n        {\n            \"id\": 19,\n            \"tipo\": \"EMAIL\",\n            \"contato\": \"adrian.pereira@senior.com.br\"\n        },\n        {\n            \"id\": 20,\n            \"tipo\": \"CELULAR\",\n            \"contato\": \"47 999512095\"\n        }\n    ]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "484ef54f-53d3-4d83-a12e-f66f5b25d6dc",
+			"name": "get pessoa",
+			"url": "http://localhost:8080/pessoa",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "5c622b83-f500-413b-85da-1179ff288a01",
+			"name": "get pessoa fisica por id",
+			"url": "http://localhost:8080/pessoa_fisica/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "6d2cf19b-1d81-49eb-ab99-daa47f8f641c",
+			"name": "get pessoa juridica",
+			"url": "http://localhost:8080/pessoa_juridica",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "836017aa-98c0-44ea-a24a-1c70e78862bb",
+			"name": "post pessoa",
+			"url": "http://localhost:8080/pessoa",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": ""
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n\t\"nome\": \"Adrian Grahl Pereira\",\n\t\"tipo\": \"PESSOA_FISICA\",\n\t\"interesses\": [\"PROGRAMACAO\",\"FILME\"],\n\t\"endereco\": {\n\t\t\"cep\": \"89209-073\",\n\t\t\"logradouro\": \"Tereza Farias Vieira\",\n\t\t\"numero\":\"51\",\n\t\t\"bairro\": \"Itaum\",\n\t\t\"cidade\": \"Joinville\",\n\t\t\"estado\": \"SC\",\n\t\t\"pais\": \"Brasil\"\n\t},\n\t\"contatos\": [\n\t\t{\n\t\t\t\"tipo\":\"EMAIL\",\n\t\t\t\"contato\":\"adrian.pereira@senior.com.br\"\n\t\t},\n\t\t{\n\t\t\t\"tipo\":\"CELULAR\",\n\t\t\t\"contato\":\"47 999512095\"\n\t\t}\n\t]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "8964e205-4b27-49d9-98e3-07be59abb64e",
+			"name": "get pessoa por id",
+			"url": "http://localhost:8080/pessoa/1",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		},
+		{
+			"id": "a95af960-5ffe-4664-aeac-885c9ddb8c39",
+			"name": "post pessoa fisica Copy",
+			"url": "http://localhost:8080/pessoa_juridica",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"method": "POST",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"rawModeData": "{\n    \"id\": 1,\n    \"nome\": \"Adrian Grahl Pereira\",\n    \"cnpj\": \"07315831916123\",\n    \"tipo\": \"PESSOA_FISICA\",\n    \"interesses\": [\n        \"PROGRAMACAO\",\n        \"FILME\"\n    ],\n    \"endereco\": {\n        \"id\": 1,\n        \"pessoa\": null,\n        \"cep\": \"89209-073\",\n        \"logradouro\": \"Tereza Farias Vieira\",\n        \"numero\": \"51\",\n        \"bairro\": \"Itaum\",\n        \"cidade\": \"Joinville\",\n        \"estado\": \"SC\",\n        \"pais\": \"Brasil\"\n    },\n    \"contatos\": [\n        {\n            \"id\": 21,\n            \"tipo\": \"EMAIL\",\n            \"contato\": \"adrian.pereira@senior.com.br\"\n        },\n        {\n            \"id\": 22,\n            \"tipo\": \"CELULAR\",\n            \"contato\": \"47 999512095\"\n        }\n    ]\n}",
+			"headers": "Content-Type: application/json\n",
+			"pathVariables": {}
+		},
+		{
+			"id": "c373eeb4-88c3-4cb1-aa28-6a527eae28f2",
+			"name": "get pessoa fisica",
+			"url": "http://localhost:8080/pessoa_fisica",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"headers": "",
+			"pathVariables": {}
+		}
+	]
+}

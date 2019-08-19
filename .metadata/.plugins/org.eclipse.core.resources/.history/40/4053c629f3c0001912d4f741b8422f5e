@@ -1,0 +1,13 @@
+package br.com.senior.treinamento.service;
+
+import br.com.senior.treinamento.model.Pessoa;
+import br.com.senior.treinamento.repository.PessoaRepository;
+
+public class PessoaService extends CrudService<Pessoa, PessoaRepository> {
+
+	public PessoaService(PessoaRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
+	}
+
+}

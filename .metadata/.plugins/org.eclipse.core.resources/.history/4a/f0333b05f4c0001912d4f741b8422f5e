@@ -1,0 +1,13 @@
+package br.com.senior.treinamento.resource;
+
+import br.com.senior.treinamento.model.Pessoa;
+import br.com.senior.treinamento.repository.PessoaRepository;
+import br.com.senior.treinamento.service.PessoaService;
+
+public class PessoaResource extends CrudResource<Pessoa, PessoaRepository, PessoaService> {
+
+	public PessoaResource(PessoaService service) {
+		super(service);
+	}
+
+}

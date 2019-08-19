@@ -1,0 +1,8 @@
+package br.com.senior.treinamento.service;
+
+import br.com.senior.treinamento.model.PessoaJuridica;
+import br.com.senior.treinamento.repository.PessoaJuridicaRepository;
+
+public class PessoaJuridicaService extends CrudService<PessoaJuridica, PessoaJuridicaRepository> {
+
+}

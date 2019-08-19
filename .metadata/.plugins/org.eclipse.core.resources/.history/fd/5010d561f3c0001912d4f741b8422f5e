@@ -1,0 +1,23 @@
+package br.com.senior.treinamento.service;
+
+import java.util.List;
+
+import org.springframework.data.domain.Sort.Order;
+
+import br.com.senior.treinamento.model.Pessoa;
+import br.com.senior.treinamento.repository.PessoaRepository;
+
+public class PessoaService extends CrudService<Pessoa, PessoaRepository> {
+
+	public PessoaService(PessoaRepository repository) {
+		super(repository);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Order> getDefaultSort() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

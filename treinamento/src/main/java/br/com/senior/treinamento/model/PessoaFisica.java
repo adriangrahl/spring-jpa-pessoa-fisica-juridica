@@ -1,0 +1,47 @@
+package br.com.senior.treinamento.model;
+
+import java.util.List;
+
+import javax.persistence.CollectionTable;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+@Entity(name = "PESSOA_FISICA")
+public class PessoaFisica extends Pessoa {
+
+	@NotBlank
+	private String cpf;
+	
+	@ElementCollection
+	@CollectionTable(name="interesses", joinColumns = @JoinColumn(name="pessoaId"))
+	@Column(name="interesse")
+	@Enumerated(EnumType.STRING)
+//	@NotEmpty
+	@Size(min=2)
+	private List<Interesse> interesses;
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public List<Interesse> getInteresses() {
+		return interesses;
+	}
+
+	public void setInteresses(List<Interesse> interesses) {
+		this.interesses = interesses;
+	}
+	
+	
+}

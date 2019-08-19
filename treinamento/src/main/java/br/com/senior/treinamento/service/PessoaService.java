@@ -1,0 +1,26 @@
+package br.com.senior.treinamento.service;
+
+import java.util.Collections;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort.Order;
+import org.springframework.stereotype.Service;
+
+import br.com.senior.treinamento.model.Pessoa;
+import br.com.senior.treinamento.repository.PessoaRepository;
+
+@Service
+public class PessoaService extends CrudService<Pessoa, PessoaRepository> {
+
+	@Autowired
+	public PessoaService(PessoaRepository repository) {
+		super(repository);
+	}
+
+	@Override
+	public List<Order> getDefaultSort() {
+		return Collections.singletonList(Order.asc("nome"));
+	}
+
+}
